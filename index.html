@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultura Fe Venezuela</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Lato:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-serif-elegant {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-sans-clean {
+      font-family: 'Lato', Arial, sans-serif;
+    }
+    .hero-pattern {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4a574 0%, #c9a86c 50%, #b8956e 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .decorative-line {
+      width: 80px;
+      height: 2px;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #d4a574;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-sans-clean">
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background-color: #f8f6f3;"><!-- Navigation -->
+   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background-color: rgba(26, 26, 46, 0.95);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between items-center py-4"><a href="#inicio" class="flex items-center gap-3 cursor-pointer"> <img src="https://i.imgur.com/tOUlWUr.png" alt="Cultura Fe Venezuela Logo" class="w-12 h-12 object-contain" loading="lazy" onerror="this.style.display='none';"> <span id="nav-church-name" class="font-serif-elegant text-xl font-semibold" style="color: #ffffff;">Cultura Fe Venezuela</span> </a>
+      <div class="hidden md:flex items-center gap-8"><a href="#inicio" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_home">Inicio</a> <a href="#nosotros" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_about">Nosotros</a> <a href="#servicios" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_services">Servicios</a> <a href="#ministerios" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_ministries">Ministerios</a> <a href="#cultura-amor-page" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_cultura_amor">Cultura de Amor</a> <a href="#contacto" class="nav-link text-sm tracking-wide" style="color: #e8e8e8;" data-i18n="nav_contact">Contacto</a> <button id="lang-toggle" class="ml-4 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300" style="background-color: #d4a574; color: #1a1a2e;">EN</button>
+      </div><button id="mobile-menu-btn" class="md:hidden p-2" style="color: #ffffff;">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4 px-4" style="background-color: #1a1a2e;"><a href="#inicio" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_home">Inicio</a> <a href="#nosotros" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_about">Nosotros</a> <a href="#servicios" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_services">Servicios</a> <a href="#ministerios" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_ministries">Ministerios</a> <a href="#cultura-amor-page" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_cultura_amor">Cultura de Amor</a> <a href="#contacto" class="block py-2 text-sm" style="color: #e8e8e8;" data-i18n="nav_contact">Contacto</a> <button id="lang-toggle-mobile" class="mt-3 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300" style="background-color: #d4a574; color: #1a1a2e;">EN</button>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="inicio" class="hero-pattern relative min-h-screen flex items-center justify-center overflow-hidden"><!-- Decorative Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+     <div class="absolute top-20 left-10 w-64 h-64 rounded-full opacity-10 animate-float" style="background: radial-gradient(circle, #d4a574 0%, transparent 70%);"></div>
+     <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-10 animate-float" style="background: radial-gradient(circle, #d4a574 0%, transparent 70%); animation-delay: 2s;"></div>
+    </div>
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+     <div class="animate-fade-in-up opacity-0">
+      <div class="flex justify-center mb-6"><img src="https://i.imgur.com/tOUlWUr.png" alt="Cultura Fe Venezuela Logo" class="w-24 h-24 object-contain" loading="lazy" onerror="this.style.display='none';">
+      </div>
+     </div>
+     <h1 id="hero-title" class="font-serif-elegant text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up opacity-0 delay-100" style="color: #ffffff;" data-i18n="hero_title">Bienvenidos a nuestra familia</h1>
+     <div class="flex justify-center mb-8 animate-fade-in-up opacity-0 delay-200">
+      <div class="decorative-line gold-gradient"></div>
+     </div>
+     <p id="hero-message" class="text-lg md:text-xl mb-6 max-w-2xl mx-auto leading-relaxed animate-fade-in-up opacity-0 delay-300" style="color: #c4c4c4;" data-i18n="hero_message">Somos un movimiento fundado en diciembre 2023, con el firme deseo de establecer la cultura del Reino en la tierra.</p>
+     <div class="flex justify-center mb-10 animate-fade-in-up opacity-0 delay-300">
+      <div class="px-6 py-3 rounded-lg" style="background-color: rgba(212, 165, 116, 0.15); border: 1px solid rgba(212, 165, 116, 0.3);">
+       <p class="text-sm font-medium italic" style="color: #d4a574;" data-i18n="verse">"Pero sin fe es imposible agradar a Dios" - Hebreos 11:6</p>
+      </div>
+     </div>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-400"><a href="#servicios" class="gold-gradient px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20" style="color: #1a1a2e;" data-i18n="btn_services"> Nuestros Servicios </a> <a href="#contacto" class="px-8 py-4 rounded-full font-medium border-2 transition-all duration-300 hover:bg-white/10" style="color: #ffffff; border-color: #ffffff;" data-i18n="btn_contact"> Contáctanos </a>
+     </div>
+    </div><!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+     <svg class="w-6 h-6" style="color: #d4a574;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+     </svg>
+    </div>
+   </section><!-- About Section -->
+   <section id="nosotros" class="py-24 px-4" style="background-color: #f8f6f3;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm font-medium tracking-widest uppercase" style="color: #d4a574;" data-i18n="about_subtitle">Conócenos</span>
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mt-4 mb-6" style="color: #1a1a2e;" data-i18n="about_title">Nuestra Historia</h2>
+      <div class="flex justify-center">
+       <div class="decorative-line" style="background-color: #d4a574;"></div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+       <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl"><img src="https://i.imgur.com/oXwgtnP.jpg" alt="Pastor Job Figuera" class="w-full h-full object-cover" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="absolute -bottom-6 -right-6 w-48 h-48 rounded-2xl -z-10" style="background-color: #d4a574; opacity: 0.3;"></div>
+      </div>
+      <div>
+       <h3 id="pastor-display" class="font-serif-elegant text-2xl font-semibold mb-4" style="color: #1a1a2e;">Pastor Job Figuera</h3>
+       <h4 class="font-serif-elegant text-xl font-semibold mb-3" style="color: #d4a574;" data-i18n="our_desire_title">Nuestro Deseo:</h4>
+       <p class="text-lg leading-relaxed mb-6 font-medium" style="color: #1a1a2e;" data-i18n="our_desire">ES QUE CONOZCAS A JESÚS, AMES PROFUNDAMENTE A DIOS Y A LAS PERSONAS, QUE CAMBIES TU MANERA DE PENSAR Y SOBRE TODO; QUE ENCUENTRES TU PROPÓSITO.</p>
+       <h4 class="font-serif-elegant text-xl font-semibold mb-3" style="color: #d4a574;" data-i18n="our_abc_title">Nuestro ABC Cultura:</h4>
+       <div class="space-y-4 mb-6">
+        <div>
+         <p class="font-semibold mb-1" style="color: #1a1a2e;" data-i18n="abc_1_title">• Transforma tus pensamientos</p>
+         <p class="text-sm italic" style="color: #666;" data-i18n="abc_1_verse">"Y no vivan ya como vive todo el mundo. Al contrario, cambien de manera de ser y de pensar." - Romanos 12:2</p>
+        </div>
+        <div>
+         <p class="font-semibold mb-1" style="color: #1a1a2e;" data-i18n="abc_2_title">• Cambia De Hábitos</p>
+         <p class="text-sm italic" style="color: #666;" data-i18n="abc_2_verse">"En cuanto a la pasada manera de vivir, despojaos del viejo hombre... y renovaos en el espíritu de vuestra mente." - Efesios 4:22-23</p>
+        </div>
+        <div>
+         <p class="font-semibold mb-1" style="color: #1a1a2e;" data-i18n="abc_3_title">• Establece el lenguaje del reino</p>
+         <p class="text-sm italic" style="color: #666;" data-i18n="abc_3_verse">Amando a Dios y a las personas (Mateo 22:36-40), promoviendo la justicia y practicando la bondad (Miqueas 6:8), sirviendo a Dios y a tus hermanos (Colosenses 3:23-24)</p>
+        </div>
+       </div>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+         </svg>
+        </div><span class="font-medium" style="color: #1a1a2e;" data-i18n="founded">Fundado en Diciembre 2023</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="servicios" class="py-24 px-4" style="background-color: #1a1a2e;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm font-medium tracking-widest uppercase" style="color: #d4a574;" data-i18n="services_subtitle">��nete a Nosotros</span>
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mt-4 mb-6" style="color: #ffffff;" data-i18n="services_title">Horarios de Servicio</h2>
+      <div class="flex justify-center">
+       <div class="decorative-line gold-gradient"></div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"><!-- Sunday Service -->
+      <div class="glass-card rounded-2xl p-8 text-center card-hover shadow-xl">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+        <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+        </svg>
+       </div>
+       <h3 class="font-serif-elegant text-2xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="service_sunday">Reunión Dominical</h3>
+       <p id="sunday-time" class="text-lg font-medium mb-4" style="color: #d4a574;">10:00am - 11:45am</p>
+       <p style="color: #666;" data-i18n="service_sunday_desc">Celebración, adoración y mensaje de esperanza para toda la familia.</p>
+      </div><!-- Wednesday Service -->
+      <div class="glass-card rounded-2xl p-8 text-center card-hover shadow-xl">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+        <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 6c3.54 0 7.19 1.79 9.88 5C19.19 14.21 15.54 16 12 16s-7.19-1.79-9.88-5C4.81 7.79 8.46 6 12 6zm0-2C6.48 4 2 8.03 2 11s4.48 7 10 7 10-4.03 10-7-4.48-7-10-7zm0 5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+        </svg>
+       </div>
+       <h3 class="font-serif-elegant text-2xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="service_wednesday">Cultura de Oración</h3>
+       <p id="wednesday-time" class="text-lg font-medium mb-4" style="color: #d4a574;">Miércoles 7:00 PM</p>
+       <p style="color: #666;" data-i18n="service_wednesday_desc">Un tiempo especial para conectar con Dios en oración.</p>
+      </div><!-- Thursday Service -->
+      <div class="glass-card rounded-2xl p-8 text-center card-hover shadow-xl">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+        <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+        </svg>
+       </div>
+       <h3 class="font-serif-elegant text-2xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="service_thursday">Discipulado Cultura</h3>
+       <p class="text-lg font-medium mb-4" style="color: #d4a574;" data-i18n="service_thursday_time">Jueves 7:00 PM</p>
+       <p style="color: #666;" data-i18n="service_thursday_desc">Crecimiento espiritual y formación en la palabra.</p>
+      </div><!-- Youth Service -->
+      <div class="glass-card rounded-2xl p-8 text-center card-hover shadow-xl">
+       <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+        <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+        </svg>
+       </div>
+       <h3 class="font-serif-elegant text-2xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="service_youth">Jóvenes Cultura</h3>
+       <p class="text-lg font-medium mb-4" style="color: #d4a574;" data-i18n="service_youth_time">Sábados 4:00 PM</p>
+       <p style="color: #666;" data-i18n="service_youth_desc">Un espacio dinámico para la juventud con música y enseñanzas.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Ministries Section -->
+   <section id="ministerios" class="py-24 px-4" style="background-color: #f8f6f3;">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm font-medium tracking-widest uppercase" style="color: #d4a574;" data-i18n="ministries_subtitle">Sirve con Nosotros</span>
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mt-4 mb-6" style="color: #1a1a2e;" data-i18n="ministries_title">Nuestros Ministerios</h2>
+      <div class="flex justify-center">
+       <div class="decorative-line" style="background-color: #d4a574;"></div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Ministry Cards --> <a href="#cultura-kids" class="group p-6 rounded-2xl transition-all duration-300 hover:shadow-xl cursor-pointer" style="background-color: #ffffff;">
+       <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110" style="background-color: #1a1a2e;">
+        <svg class="w-7 h-7" style="color: #d4a574;" fill="currentColor" viewbox="0 0 24 24"><path d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z" />
+        </svg>
+       </div><h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="ministry1_name">Cultura Kids</h3><p class="text-sm mb-3" style="color: #666;" data-i18n="ministry1_desc">Enseñanza bíblica divertida y dinámica para los ni��os.</p><span class="text-sm font-medium" style="color: #d4a574;" data-i18n="see_more">Ver más →</span> </a> <a href="#cultura-amor-page" class="group p-6 rounded-2xl transition-all duration-300 hover:shadow-xl cursor-pointer" style="background-color: #ffffff;">
+       <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110" style="background-color: #1a1a2e;">
+        <svg class="w-7 h-7" style="color: #d4a574;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+       </div><h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="ministry2_name">Cultura de Amor</h3><p class="text-sm mb-3" style="color: #666;" data-i18n="ministry2_desc">Compartiendo el amor de Cristo con la comunidad.</p><span class="text-sm font-medium" style="color: #d4a574;" data-i18n="see_more">Ver más →</span> </a> <a href="#cultura-worship" class="group p-6 rounded-2xl transition-all duration-300 hover:shadow-xl cursor-pointer" style="background-color: #ffffff;">
+       <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110" style="background-color: #1a1a2e;">
+        <svg class="w-7 h-7" style="color: #d4a574;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+        </svg>
+       </div><h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="ministry3_name">Cultura Worship</h3><p class="text-sm mb-3" style="color: #666;" data-i18n="ministry3_desc">Adoración y alabanza para glorificar a Dios.</p><span class="text-sm font-medium" style="color: #d4a574;" data-i18n="see_more">Ver más →</span> </a> <a href="#cultura-dance" class="group p-6 rounded-2xl transition-all duration-300 hover:shadow-xl cursor-pointer" style="background-color: #ffffff;">
+       <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110" style="background-color: #1a1a2e;">
+        <svg class="w-7 h-7" style="color: #d4a574;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 4.17 4.42 9.92 6.24 12.11.4.48 1.13.48 1.53 0C14.58 18.92 19 13.17 19 9c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+       </div><h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="ministry4_name">Cultura Dance</h3><p class="text-sm mb-3" style="color: #666;" data-i18n="ministry4_desc">Danza y expresión artística para honrar a Dios.</p><span class="text-sm font-medium" style="color: #d4a574;" data-i18n="see_more">Ver más →</span> </a>
+     </div>
+    </div>
+   </section><!-- Cultura de Amor Full Page -->
+   <section id="cultura-amor-page" class="py-24 px-4" style="background-color: #ffffff;">
+    <div class="max-w-7xl mx-auto"><a href="#inicio" class="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-all hover:gap-3" style="color: #d4a574;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg><span data-i18n="back_home">Volver al Inicio</span> </a> <!-- Header -->
+     <div class="text-center mb-16">
+      <div class="flex justify-center mb-6"><img src="https://i.imgur.com/bcSRhZ0.png" alt="Cultura de Amor Logo" class="w-40 h-40 object-contain" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <h1 class="font-serif-elegant text-5xl md:text-6xl font-bold mb-6" style="color: #1a1a2e;" data-i18n="cultura_amor_title">Cultura de Amor</h1>
+      <div class="flex justify-center mb-6">
+       <div class="decorative-line" style="background-color: #d4a574;"></div>
+      </div>
+      <p class="text-xl max-w-3xl mx-auto leading-relaxed" style="color: #666;" data-i18n="cultura_amor_intro">Compartiendo el amor de Cristo con la comunidad a través de acciones concretas de servicio y compasión. Somos manos y pies de Jes��s llevando esperanza a quienes más lo necesitan.</p>
+     </div><!-- Mission Statement -->
+     <div class="max-w-4xl mx-auto mb-20 p-8 rounded-2xl" style="background-color: #f8f6f3;">
+      <h2 class="font-serif-elegant text-3xl font-bold mb-6 text-center" style="color: #1a1a2e;" data-i18n="cultura_amor_mission_title">Nuestra Misión</h2>
+      <p class="text-lg leading-relaxed text-center mb-6" style="color: #666;" data-i18n="cultura_amor_mission">Llevar el amor transformador de Cristo a las calles, sirviendo a los más vulnerables de nuestra comunidad con comida, ropa, atención médica y sobre todo, con el mensaje de esperanza del evangelio.</p>
+      <div class="flex justify-center">
+       <div class="px-6 py-3 rounded-lg" style="background-color: rgba(212, 165, 116, 0.15); border: 1px solid rgba(212, 165, 116, 0.3);">
+        <p class="text-sm font-medium italic" style="color: #d4a574;" data-i18n="cultura_amor_verse">"En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos con los otros" - Juan 13:35</p>
+       </div>
+      </div>
+     </div><!-- Photo Gallery -->
+     <div class="mb-16">
+      <h2 class="font-serif-elegant text-3xl font-bold mb-8 text-center" style="color: #1a1a2e;" data-i18n="cultura_amor_gallery">Galería de Actividades</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/6cEqMJR.jpg')"><img src="https://i.imgur.com/6cEqMJR.jpg" alt="Cultura de Amor Actividad 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/uVCMMyq.jpg')"><img src="https://i.imgur.com/uVCMMyq.jpg" alt="Cultura de Amor Actividad 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/Djk3V6T.jpg')"><img src="https://i.imgur.com/Djk3V6T.jpg" alt="Cultura de Amor Actividad 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/M5ThkAH.jpg')"><img src="https://i.imgur.com/M5ThkAH.jpg" alt="Cultura de Amor Actividad 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/UsHAXwX.jpg')"><img src="https://i.imgur.com/UsHAXwX.jpg" alt="Cultura de Amor Actividad 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/ibOSWR4.jpg')"><img src="https://i.imgur.com/ibOSWR4.jpg" alt="Cultura de Amor Actividad 6" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/jsguwCr.jpg')"><img src="https://i.imgur.com/jsguwCr.jpg" alt="Cultura de Amor Actividad 7" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/YLIalnn.jpg')"><img src="https://i.imgur.com/YLIalnn.jpg" alt="Cultura de Amor Actividad 8" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+       <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/O1r32sJ.jpg')"><img src="https://i.imgur.com/O1r32sJ.jpg" alt="Cultura de Amor Actividad 9" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+       </div>
+      </div>
+     </div><!-- What We Do -->
+     <div class="mb-16">
+      <h2 class="font-serif-elegant text-3xl font-bold mb-10 text-center" style="color: #1a1a2e;" data-i18n="cultura_amor_activities">Nuestras Actividades</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div class="p-6 rounded-xl card-hover" style="background-color: #f8f6f3;">
+        <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-7 h-7" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="activity1_title">Alimentación</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="activity1_desc">Distribución de comida caliente para personas en situación de calle</p>
+       </div>
+       <div class="p-6 rounded-xl card-hover" style="background-color: #f8f6f3;">
+        <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-7 h-7" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="activity2_title">Donación de Ropa</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="activity2_desc">Entrega de ropa y calzado a familias necesitadas</p>
+       </div>
+       <div class="p-6 rounded-xl card-hover" style="background-color: #f8f6f3;">
+        <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-7 h-7" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="activity3_title">Atención Médica</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="activity3_desc">Jornadas de salud y atención básica médica</p>
+       </div>
+       <div class="p-6 rounded-xl card-hover" style="background-color: #f8f6f3;">
+        <div class="w-14 h-14 mb-4 rounded-xl flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-7 h-7" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L14 8H20L15 12L17 18L12 14L7 18L9 12L4 8H10L12 2Z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="activity4_title">Evangelismo</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="activity4_desc">Compartiendo el evangelio y orando con las personas</p>
+       </div>
+      </div>
+     </div><!-- Donation Impact Section -->
+     <div class="max-w-5xl mx-auto mb-16 p-10 rounded-2xl" style="background-color: #f8f6f3;">
+      <div class="text-center mb-8">
+       <h2 class="font-serif-elegant text-3xl md:text-4xl font-bold mb-4" style="color: #1a1a2e;" data-i18n="cultura_amor_impact_title">¿Quieres que esto siga sucediendo?</h2>
+       <p class="text-lg leading-relaxed" style="color: #666;" data-i18n="cultura_amor_impact_desc">Tu generosidad transforma vidas. Con tu apoyo podemos seguir llevando comida, ropa, atención médica y esperanza a quienes más lo necesitan. Cada donación, sin importar su tamaño, marca una diferencia real en nuestra comunidad.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+       <div class="text-center p-6 rounded-xl" style="background-color: #ffffff;">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="impact_1_title">Más Familias Bendecidas</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="impact_1_desc">Cada donación nos permite alcanzar más hogares necesitados</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: #ffffff;">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="impact_2_title">Más Jornadas de Amor</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="impact_2_desc">Podemos organizar salidas más frecuentes a las comunidades</p>
+       </div>
+       <div class="text-center p-6 rounded-xl" style="background-color: #ffffff;">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: #d4a574;">
+         <svg class="w-8 h-8" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L14 8H20L15 12L17 18L12 14L7 18L9 12L4 8H10L12 2Z" />
+         </svg>
+        </div>
+        <h3 class="font-serif-elegant text-xl font-semibold mb-2" style="color: #1a1a2e;" data-i18n="impact_3_title">Mayor Impacto</h3>
+        <p class="text-sm" style="color: #666;" data-i18n="impact_3_desc">Tu apoyo multiplica el amor de Cristo en las calles</p>
+       </div>
+      </div>
+      <div class="text-center"><a href="https://wa.me/584148182793?text=Hola!%20Quiero%20donar%20para%20Cultura%20de%20Amor%20%E2%9D%A4%EF%B8%8F" target="_blank" rel="noopener noreferrer" class="inline-block gold-gradient px-10 py-5 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105" style="color: #1a1a2e;"> <span data-i18n="btn_donate_now">💝 Donar Ahora para Cultura de Amor</span> </a>
+       <p class="mt-4 text-sm italic" style="color: #666;" data-i18n="donate_gratitude">"Dios ama al dador alegre" - 2 Corintios 9:7</p>
+      </div>
+     </div><!-- Call to Action -->
+     <div class="max-w-4xl mx-auto text-center p-12 rounded-2xl" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);">
+      <h2 class="font-serif-elegant text-3xl md:text-4xl font-bold mb-4" style="color: #ffffff;" data-i18n="cultura_amor_cta_title">¿Quieres Ser Parte?</h2>
+      <p class="text-lg mb-8" style="color: #c4c4c4;" data-i18n="cultura_amor_cta_desc">Únete a nosotros en nuestras jornadas de amor. Todos son bienvenidos a servir.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="https://wa.me/584148182793?text=Hola!%20Quiero%20ser%20parte%20de%20Cultura%20de%20Amor" target="_blank" rel="noopener noreferrer" class="gold-gradient px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg" style="color: #1a1a2e;" data-i18n="btn_join"> Unirme al Equipo </a> <a href="https://wa.me/584148182793?text=Hola!%20Tengo%20preguntas%20sobre%20Cultura%20de%20Amor" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full font-medium border-2 transition-all duration-300 hover:bg-white/10" style="color: #ffffff; border-color: #ffffff;" data-i18n="btn_contact_info"> Contactar </a>
+      </div>
+     </div>
+    </div>
+   </section><!-- Ministry Detail Pages --> <!-- Cultura Kids -->
+   <section id="cultura-kids" class="py-24 px-4" style="background-color: #ffffff;">
+    <div class="max-w-6xl mx-auto"><a href="#ministerios" class="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-all hover:gap-3" style="color: #d4a574;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg><span data-i18n="back_ministries">Volver a Ministerios</span> </a>
+     <div class="text-center mb-12">
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mb-4" style="color: #1a1a2e;" data-i18n="ministry1_name">Cultura Kids</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: #666;" data-i18n="ministry1_detail">Enseñanza bíblica divertida y dinámica para los niños, donde aprenden sobre el amor de Dios a través de juegos, canciones y actividades creativas.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/kn1AdtD.jpg')"><img src="https://i.imgur.com/kn1AdtD.jpg" alt="Cultura Kids Actividad 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/jUDWJ14.jpg')"><img src="https://i.imgur.com/jUDWJ14.jpg" alt="Cultura Kids Actividad 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/xh00o29.jpg')"><img src="https://i.imgur.com/xh00o29.jpg" alt="Cultura Kids Actividad 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/ctquOz6.jpg')"><img src="https://i.imgur.com/ctquOz6.jpg" alt="Cultura Kids Actividad 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/aEjkpLO.jpg')"><img src="https://i.imgur.com/aEjkpLO.jpg" alt="Cultura Kids Actividad 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/BaGFjjL.jpg')"><img src="https://i.imgur.com/BaGFjjL.jpg" alt="Cultura Kids Actividad 6" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+     </div>
+    </div>
+   </section><!-- Cultura Worship -->
+   <section id="cultura-worship" class="py-24 px-4" style="background-color: #ffffff;">
+    <div class="max-w-6xl mx-auto"><a href="#ministerios" class="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-all hover:gap-3" style="color: #d4a574;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg><span data-i18n="back_ministries">Volver a Ministerios</span> </a>
+     <div class="text-center mb-12">
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mb-4" style="color: #1a1a2e;" data-i18n="ministry3_name">Cultura Worship</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: #666;" data-i18n="ministry3_detail">Adoración y alabanza para glorificar a Dios con música, canto y corazones entregados.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/5zIfero.jpg')"><img src="https://i.imgur.com/5zIfero.jpg" alt="Cultura Worship Actividad 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/CMj6z0q.jpg')"><img src="https://i.imgur.com/CMj6z0q.jpg" alt="Cultura Worship Actividad 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/0ymgmkt.jpg')"><img src="https://i.imgur.com/0ymgmkt.jpg" alt="Cultura Worship Actividad 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/QU2pEmN.jpg')"><img src="https://i.imgur.com/QU2pEmN.jpg" alt="Cultura Worship Actividad 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/JaNwi0e.jpg')"><img src="https://i.imgur.com/JaNwi0e.jpg" alt="Cultura Worship Actividad 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/OyCsK8z.jpg')"><img src="https://i.imgur.com/OyCsK8z.jpg" alt="Cultura Worship Actividad 6" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+     </div>
+    </div>
+   </section><!-- Cultura Dance -->
+   <section id="cultura-dance" class="py-24 px-4" style="background-color: #f8f6f3;">
+    <div class="max-w-6xl mx-auto"><a href="#ministerios" class="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-all hover:gap-3" style="color: #d4a574;">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg><span data-i18n="back_ministries">Volver a Ministerios</span> </a>
+     <div class="text-center mb-12">
+      <div class="flex justify-center mb-6"><img src="https://i.imgur.com/gkG8h9r.png" alt="Cultura Dance Logo" class="w-32 h-32 object-contain" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mb-4" style="color: #1a1a2e;" data-i18n="ministry4_name">Cultura Dance</h2>
+      <p class="text-lg max-w-2xl mx-auto" style="color: #666;" data-i18n="ministry4_detail">Danza y expresión artística para honrar a Dios con movimiento, gracia y pasión.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/9tvmrZA.jpg')"><img src="https://i.imgur.com/9tvmrZA.jpg" alt="Cultura Dance Actividad 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/a2MP0tG.jpg')"><img src="https://i.imgur.com/a2MP0tG.jpg" alt="Cultura Dance Actividad 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/5Kehvdu.jpg')"><img src="https://i.imgur.com/5Kehvdu.jpg" alt="Cultura Dance Actividad 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/waFQ7S7.jpg')"><img src="https://i.imgur.com/waFQ7S7.jpg" alt="Cultura Dance Actividad 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/BGvqpFa.jpg')"><img src="https://i.imgur.com/BGvqpFa.jpg" alt="Cultura Dance Actividad 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden shadow-lg cursor-pointer group" onclick="openModal('https://i.imgur.com/qDQ7iX4.jpg')"><img src="https://i.imgur.com/qDQ7iX4.jpg" alt="Cultura Dance Actividad 6" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" onerror="this.style.display='none';">
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contacto" class="py-24 px-4" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-16"><span class="text-sm font-medium tracking-widest uppercase" style="color: #d4a574;" data-i18n="contact_subtitle">Estamos Aquí</span>
+      <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mt-4 mb-6" style="color: #ffffff;" data-i18n="contact_title">Contáctanos</h2>
+      <div class="flex justify-center">
+       <div class="decorative-line gold-gradient"></div>
+      </div>
+     </div>
+     <div class="max-w-4xl mx-auto">
+      <div class="space-y-8">
+       <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+         <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-1" style="color: #ffffff;" data-i18n="contact_address_label">Dirección</h3>
+         <p style="color: #c4c4c4;">Avenida Country Club, Centro Comercial Gold Country, Piso 2, Local B-13<br>
+          Barcelona - Anzoátegui, Venezuela</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+         <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-1" style="color: #ffffff;">Email</h3>
+         <p style="color: #c4c4c4;">Culturafevenezuela@gmail.com</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+         <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg mb-2" style="color: #ffffff;" data-i18n="social_media">Redes Sociales</h3>
+         <div class="flex gap-4"><a href="https://www.instagram.com/culturafevzla" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+           <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+           </svg></a> <a href="https://www.tiktok.com/@culturafevzla_25" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+           <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+           </svg></a> <a href="https://www.tiktok.com/@culturadeamorcf" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+           <svg class="w-6 h-6" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+           </svg></a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-4" style="background-color: #0d0d1a;">
+    <div class="max-w-7xl mx-auto">
+     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3"><img src="https://i.imgur.com/tOUlWUr.png" alt="Cultura Fe Venezuela Logo" class="w-12 h-12 object-contain" loading="lazy" onerror="this.style.display='none';"> <span id="footer-church-name" class="font-serif-elegant text-lg font-semibold" style="color: #ffffff;">Cultura Fe Venezuela</span>
+      </div>
+      <div class="flex gap-4"><a href="https://www.instagram.com/culturafevzla" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg></a> <a href="https://www.tiktok.com/@culturafevzla_25" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+        </svg></a> <a href="https://www.tiktok.com/@culturadeamorcf" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:opacity-80" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg></a>
+      </div>
+      <p class="text-sm" style="color: #888;" data-i18n="footer_rights">�� 2026 Todos los derechos reservados</p>
+     </div>
+    </div>
+   </footer>
+  </div><!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 z-[100] hidden items-center justify-center" style="background-color: rgba(0, 0, 0, 0.9);" onclick="closeModal()"><button onclick="closeModal()" class="absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white/10" style="color: #ffffff;">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg></button> <img id="modalImage" src="" alt="Imagen ampliada" class="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+  </div><!-- Floating WhatsApp Button -->
+  <div id="whatsapp-float" class="fixed bottom-8 right-8 z-50"><button id="whatsapp-btn" class="w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110" style="background-color: #25D366;">
+    <svg class="w-8 h-8" style="color: #ffffff;" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></button> <!-- WhatsApp Menu -->
+   <div id="whatsapp-menu" class="hidden absolute bottom-20 right-0 w-72 rounded-2xl shadow-2xl overflow-hidden" style="background-color: #ffffff;">
+    <div class="p-4" style="background-color: #075E54;">
+     <h3 class="font-semibold text-lg" style="color: #ffffff;" data-i18n="whatsapp_title">¿Cómo podemos ayudarte?</h3>
+    </div>
+    <div class="p-4"><a href="https://wa.me/584148182793?text=Hola!%20Quiero%20donar%20para%20Cultura%20de%20Amor%20%E2%9D%A4%EF%B8%8F" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg mb-3 transition-all duration-300 hover:shadow-md" style="background-color: #f8f6f3;">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+       </div>
+       <div>
+        <p class="font-semibold text-sm" style="color: #1a1a2e;" data-i18n="whatsapp_donate_love">Donar para Cultura de Amor</p>
+        <p class="text-xs" style="color: #666;" data-i18n="whatsapp_donate_love_desc">Ayuda a la comunidad</p>
+       </div>
+      </div></a> <a href="https://wa.me/584148182793?text=Hola!%20Quiero%20donar%20para%20el%20templo%20%E2%9B%AA" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg mb-3 transition-all duration-300 hover:shadow-md" style="background-color: #f8f6f3;">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L14 8H20L15 12L17 18L12 14L7 18L9 12L4 8H10L12 2Z" />
+        </svg>
+       </div>
+       <div>
+        <p class="font-semibold text-sm" style="color: #1a1a2e;" data-i18n="whatsapp_donate_temple">Donar para el Templo</p>
+        <p class="text-xs" style="color: #666;" data-i18n="whatsapp_donate_temple_desc">Construyendo juntos</p>
+       </div>
+      </div></a> <a href="https://wa.me/584148182793?text=Hola!%20Necesito%20que%20oren%20por%20m%C3%AD%20%F0%9F%99%8F" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg mb-3 transition-all duration-300 hover:shadow-md" style="background-color: #f8f6f3;">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+        </svg>
+       </div>
+       <div>
+        <p class="font-semibold text-sm" style="color: #1a1a2e;" data-i18n="whatsapp_prayer">Solicitar Oración</p>
+        <p class="text-xs" style="color: #666;" data-i18n="whatsapp_prayer_desc">Estamos para ti</p>
+       </div>
+      </div></a> <a href="https://wa.me/584148182793?text=Hola!%20Quiero%20informaci%C3%B3n%20%F0%9F%91%8B" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg transition-all duration-300 hover:shadow-md" style="background-color: #f8f6f3;">
+      <div class="flex items-center gap-3">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #d4a574;">
+        <svg class="w-5 h-5" style="color: #1a1a2e;" fill="currentColor" viewbox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+        </svg>
+       </div>
+       <div>
+        <p class="font-semibold text-sm" style="color: #1a1a2e;" data-i18n="whatsapp_contact">Contactar</p>
+        <p class="text-xs" style="color: #666;" data-i18n="whatsapp_contact_desc">Más información</p>
+       </div>
+      </div></a>
+    </div>
+   </div>
+  </div>
+  <script>
+    // Image Modal Functions
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Translation data
+    const translations = {
+      es: {
+        nav_home: 'Inicio',
+        nav_about: 'Nosotros',
+        nav_services: 'Servicios',
+        nav_ministries: 'Ministerios',
+        nav_cultura_amor: 'Cultura de Amor',
+        nav_contact: 'Contacto',
+        back_home: 'Volver al Inicio',
+        hero_title: 'Bienvenidos a nuestra familia',
+        hero_message: 'Somos un movimiento fundado en diciembre 2023, con el firme deseo de establecer la cultura del Reino en la tierra.',
+        verse: '"Pero sin fe es imposible agradar a Dios" - Hebreos 11:6',
+        btn_services: 'Nuestros Servicios',
+        btn_contact: 'Contáctanos',
+        about_subtitle: 'Con��cenos',
+        about_title: 'Nuestra Historia',
+        our_desire_title: 'Nuestro Deseo:',
+        our_desire: 'ES QUE CONOZCAS A JESÚS, AMES PROFUNDAMENTE A DIOS Y A LAS PERSONAS, QUE CAMBIES TU MANERA DE PENSAR Y SOBRE TODO; QUE ENCUENTRES TU PROPÓSITO.',
+        our_abc_title: 'Nuestro ABC Cultura:',
+        abc_1_title: '• Transforma tus pensamientos',
+        abc_1_verse: '"Y no vivan ya como vive todo el mundo. Al contrario, cambien de manera de ser y de pensar." - Romanos 12:2',
+        abc_2_title: '• Cambia De Hábitos',
+        abc_2_verse: '"En cuanto a la pasada manera de vivir, despojaos del viejo hombre... y renovaos en el espíritu de vuestra mente." - Efesios 4:22-23',
+        abc_3_title: '• Establece el lenguaje del reino',
+        abc_3_verse: 'Amando a Dios y a las personas (Mateo 22:36-40), promoviendo la justicia y practicando la bondad (Miqueas 6:8), sirviendo a Dios y a tus hermanos (Colosenses 3:23-24)',
+        founded: 'Fundado en Diciembre 2023',
+        services_subtitle: 'Únete a Nosotros',
+        services_title: 'Horarios de Servicio',
+        service_sunday: 'Reunión Dominical',
+        service_sunday_desc: 'Celebración, adoración y mensaje de esperanza para toda la familia.',
+        service_wednesday: 'Cultura de Oración',
+        service_wednesday_desc: 'Un tiempo especial para conectar con Dios en oración.',
+        service_thursday: 'Discipulado Cultura',
+        service_thursday_time: 'Jueves 7:00 PM',
+        service_thursday_desc: 'Crecimiento espiritual y formación en la palabra.',
+        service_youth: 'Jóvenes Cultura',
+        service_youth_time: 'Sábados 4:00 PM',
+        service_youth_desc: 'Un espacio dinámico para la juventud con música y enseñanzas.',
+        ministries_subtitle: 'Sirve con Nosotros',
+        ministries_title: 'Nuestros Ministerios',
+        ministry1_name: 'Cultura Kids',
+        ministry1_desc: 'Enseñanza bíblica divertida y dinámica para los niños.',
+        ministry2_name: 'Cultura de Amor',
+        ministry2_desc: 'Compartiendo el amor de Cristo con la comunidad.',
+        ministry3_name: 'Cultura Worship',
+        ministry3_desc: 'Adoración y alabanza para glorificar a Dios.',
+        ministry4_name: 'Cultura Dance',
+        ministry4_desc: 'Danza y expresi��n artística para honrar a Dios.',
+        contact_subtitle: 'Estamos Aquí',
+        contact_title: 'Contáctanos',
+        contact_address_label: 'Dirección',
+        social_media: 'Redes Sociales',
+        footer_rights: '© 2026 Todos los derechos reservados',
+        see_more: 'Ver más ���',
+        back_ministries: 'Volver a Ministerios',
+        ministry1_detail: 'Enseñanza bíblica divertida y dinámica para los niños, donde aprenden sobre el amor de Dios a través de juegos, canciones y actividades creativas.',
+        ministry2_detail: 'Compartiendo el amor de Cristo con la comunidad a través de acciones concretas de servicio y compasión.',
+        ministry3_detail: 'Adoración y alabanza para glorificar a Dios con música, canto y corazones entregados.',
+        ministry4_detail: 'Danza y expresión artística para honrar a Dios con movimiento, gracia y pasión.',
+        whatsapp_title: '¿Cómo podemos ayudarte?',
+        whatsapp_donate_love: 'Donar para Cultura de Amor',
+        whatsapp_donate_love_desc: 'Ayuda a la comunidad',
+        whatsapp_donate_temple: 'Donar para el Templo',
+        whatsapp_donate_temple_desc: 'Construyendo juntos',
+        whatsapp_prayer: 'Solicitar Oración',
+        whatsapp_prayer_desc: 'Estamos para ti',
+        whatsapp_contact: 'Contactar',
+        whatsapp_contact_desc: 'Más información',
+        cultura_amor_title: 'Cultura de Amor',
+        cultura_amor_intro: 'Compartiendo el amor de Cristo con la comunidad a través de acciones concretas de servicio y compasión. Somos manos y pies de Jes��s llevando esperanza a quienes más lo necesitan.',
+        cultura_amor_mission_title: 'Nuestra Misión',
+        cultura_amor_mission: 'Llevar el amor transformador de Cristo a las calles, sirviendo a los más vulnerables de nuestra comunidad con comida, ropa, atención médica y sobre todo, con el mensaje de esperanza del evangelio.',
+        cultura_amor_verse: '"En esto conocerán todos que sois mis discípulos, si tuviereis amor los unos con los otros" - Juan 13:35',
+        cultura_amor_gallery: 'Galería de Actividades',
+        cultura_amor_gallery_note: 'Las fotos de nuestras actividades se actualizarán próximamente',
+        cultura_amor_activities: 'Nuestras Actividades',
+        activity1_title: 'Alimentación',
+        activity1_desc: 'Distribución de comida caliente para personas en situación de calle',
+        activity2_title: 'Donación de Ropa',
+        activity2_desc: 'Entrega de ropa y calzado a familias necesitadas',
+        activity3_title: 'Atención Médica',
+        activity3_desc: 'Jornadas de salud y atención básica médica',
+        activity4_title: 'Evangelismo',
+        activity4_desc: 'Compartiendo el evangelio y orando con las personas',
+        cultura_amor_cta_title: '¿Quieres Ser Parte?',
+        cultura_amor_cta_desc: 'Únete a nosotros en nuestras jornadas de amor. Todos son bienvenidos a servir.',
+        btn_join: 'Unirme al Equipo',
+        btn_donate: 'Hacer una Donación'
+      },
+      en: {
+        nav_home: 'Home',
+        nav_about: 'About Us',
+        nav_services: 'Services',
+        nav_ministries: 'Ministries',
+        nav_cultura_amor: 'Culture of Love',
+        nav_contact: 'Contact',
+        back_home: 'Back to Home',
+        hero_title: 'A Place of Peace',
+        hero_message: 'We are a movement founded in December 2023, with the firm desire to establish the Kingdom culture on earth.',
+        verse: '"But without faith it is impossible to please God" - Hebrews 11:6',
+        btn_services: 'Our Services',
+        btn_contact: 'Contact Us',
+        about_subtitle: 'Get to Know Us',
+        about_title: 'Our Story',
+        our_desire_title: 'Our Desire:',
+        our_desire: 'IS THAT YOU KNOW JESUS, DEEPLY LOVE GOD AND PEOPLE, THAT YOU CHANGE YOUR WAY OF THINKING AND ABOVE ALL; THAT YOU FIND YOUR PURPOSE.',
+        our_abc_title: 'Our ABC Culture:',
+        abc_1_title: '• Transform your thoughts',
+        abc_1_verse: '"Do not conform to the pattern of this world, but be transformed by the renewing of your mind." - Romans 12:2',
+        abc_2_title: '• Change Your Habits',
+        abc_2_verse: '"Put off your old self... and be renewed in the spirit of your minds." - Ephesians 4:22-23',
+        abc_3_title: '• Establish the language of the kingdom',
+        abc_3_verse: 'Loving God and loving people (Matthew 22:36-40), promoting justice and practicing kindness (Micah 6:8), serving God and your brothers and sisters (Colossians 3:23-24)',
+        founded: 'Founded in December 2023',
+        services_subtitle: 'Join Us',
+        services_title: 'Service Times',
+        service_sunday: 'Sunday Gathering',
+        service_sunday_desc: 'Celebration, worship, and a message of hope for the whole family.',
+        service_wednesday: 'Culture of Prayer',
+        service_wednesday_desc: 'A special time to connect with God in prayer.',
+        service_thursday: 'Culture Discipleship',
+        service_thursday_time: 'Thursday 7:00 PM',
+        service_thursday_desc: 'Spiritual growth and formation in the word.',
+        service_youth: 'Youth Culture',
+        service_youth_time: 'Saturday 4:00 PM',
+        service_youth_desc: 'A dynamic space for youth with music and teachings.',
+        ministries_subtitle: 'Serve With Us',
+        ministries_title: 'Our Ministries',
+        ministry1_name: 'Culture Kids',
+        ministry1_desc: 'Fun and dynamic biblical teaching for children.',
+        ministry2_name: 'Culture of Love',
+        ministry2_desc: 'Sharing Christ\'s love with the community.',
+        ministry3_name: 'Culture Worship',
+        ministry3_desc: 'Worship and praise to glorify God.',
+        ministry4_name: 'Culture Dance',
+        ministry4_desc: 'Dance and artistic expression to honor God.',
+        contact_subtitle: 'We Are Here',
+        contact_title: 'Contact Us',
+        contact_address_label: 'Address',
+        social_media: 'Social Media',
+        footer_rights: '© 2026 All rights reserved',
+        see_more: 'See more →',
+        back_ministries: 'Back to Ministries',
+        ministry1_detail: 'Fun and dynamic biblical teaching for children, where they learn about God\'s love through games, songs and creative activities.',
+        ministry2_detail: 'Sharing Christ\'s love with the community through concrete actions of service and compassion.',
+        ministry3_detail: 'Worship and praise to glorify God with music, singing and surrendered hearts.',
+        ministry4_detail: 'Dance and artistic expression to honor God with movement, grace and passion.',
+        whatsapp_title: 'How can we help you?',
+        whatsapp_donate_love: 'Donate for Culture of Love',
+        whatsapp_donate_love_desc: 'Help the community',
+        whatsapp_donate_temple: 'Donate for the Temple',
+        whatsapp_donate_temple_desc: 'Building together',
+        whatsapp_prayer: 'Request Prayer',
+        whatsapp_prayer_desc: 'We are here for you',
+        whatsapp_contact: 'Contact',
+        whatsapp_contact_desc: 'More information',
+        cultura_amor_title: 'Culture of Love',
+        cultura_amor_intro: 'Sharing Christ\'s love with the community through concrete actions of service and compassion. We are the hands and feet of Jesus bringing hope to those who need it most.',
+        cultura_amor_mission_title: 'Our Mission',
+        cultura_amor_mission: 'Bring the transforming love of Christ to the streets, serving the most vulnerable in our community with food, clothing, medical care and above all, with the message of hope of the gospel.',
+        cultura_amor_verse: '"By this everyone will know that you are my disciples, if you love one another" - John 13:35',
+        cultura_amor_gallery: 'Activities Gallery',
+        cultura_amor_gallery_note: 'Photos of our activities will be updated soon',
+        cultura_amor_activities: 'Our Activities',
+        activity1_title: 'Food Distribution',
+        activity1_desc: 'Hot meal distribution for homeless people',
+        activity2_title: 'Clothing Donation',
+        activity2_desc: 'Delivery of clothing and footwear to families in need',
+        activity3_title: 'Medical Care',
+        activity3_desc: 'Health days and basic medical care',
+        activity4_title: 'Evangelism',
+        activity4_desc: 'Sharing the gospel and praying with people',
+        cultura_amor_cta_title: 'Want to Be Part?',
+        cultura_amor_cta_desc: 'Join us in our journeys of love. Everyone is welcome to serve.',
+        btn_join: 'Join the Team',
+        btn_donate: 'Make a Donation',
+        btn_contact_info: 'Contact',
+        cultura_amor_impact_title: 'Do You Want This to Keep Happening?',
+        cultura_amor_impact_desc: 'Your generosity transforms lives. With your support we can continue bringing food, clothing, medical care and hope to those who need it most. Every donation, no matter the size, makes a real difference in our community.',
+        impact_1_title: 'More Blessed Families',
+        impact_1_desc: 'Each donation allows us to reach more families in need',
+        impact_2_title: 'More Journeys of Love',
+        impact_2_desc: 'We can organize more frequent outings to communities',
+        impact_3_title: 'Greater Impact',
+        impact_3_desc: 'Your support multiplies Christ\'s love on the streets',
+        btn_donate_now: '�� Donate Now for Culture of Love',
+        donate_gratitude: '"God loves a cheerful giver" - 2 Corinthians 9:7'
+      }
+    };
+
+    let currentLang = 'es';
+
+    function translatePage(lang) {
+      currentLang = lang;
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      // Update placeholders
+      const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+      placeholderElements.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+
+      // Update language buttons
+      const langButtons = document.querySelectorAll('#lang-toggle, #lang-toggle-mobile');
+      langButtons.forEach(btn => {
+        btn.textContent = lang === 'es' ? 'EN' : 'ES';
+      });
+    }
+
+    // Default configuration
+    const defaultConfig = {
+      church_name: 'Cultura Fe Venezuela',
+      welcome_title: 'Bienvenidos a nuestra familia',
+      welcome_message: 'Somos un movimiento fundado en diciembre 2023, con el firme deseo de establecer la cultura del Reino en la tierra.',
+      service_time_sunday: '10:00am - 11:45am',
+      service_time_wednesday: 'Miércoles 7:00 PM',
+      address: 'Calle Principal #123, Ciudad',
+      phone: '+1 234 567 890',
+      pastor_name: 'Pastor Job Figuera',
+      background_color: '#f8f6f3',
+      primary_color: '#1a1a2e',
+      accent_color: '#d4a574',
+      text_color: '#4a4a4a',
+      light_text_color: '#ffffff',
+      font_family: 'Cormorant Garamond',
+      font_size: 16
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Update text content
+          document.getElementById('nav-church-name').textContent = config.church_name || defaultConfig.church_name;
+          document.getElementById('footer-church-name').textContent = config.church_name || defaultConfig.church_name;
+          document.getElementById('hero-title').textContent = config.welcome_title || defaultConfig.welcome_title;
+          document.getElementById('hero-message').textContent = config.welcome_message || defaultConfig.welcome_message;
+          document.getElementById('sunday-time').textContent = config.service_time_sunday || defaultConfig.service_time_sunday;
+          document.getElementById('wednesday-time').textContent = config.service_time_wednesday || defaultConfig.service_time_wednesday;
+          document.getElementById('pastor-display').textContent = config.pastor_name || defaultConfig.pastor_name;
+
+          // Update colors
+          const bgColor = config.background_color || defaultConfig.background_color;
+          const primaryColor = config.primary_color || defaultConfig.primary_color;
+          const accentColor = config.accent_color || defaultConfig.accent_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+          const lightTextColor = config.light_text_color || defaultConfig.light_text_color;
+
+          document.getElementById('app-wrapper').style.backgroundColor = bgColor;
+          document.getElementById('nosotros').style.backgroundColor = bgColor;
+          document.getElementById('ministerios').style.backgroundColor = bgColor;
+
+          // Update font
+          const customFont = config.font_family || defaultConfig.font_family;
+          const fontStack = `${customFont}, Georgia, serif`;
+          document.querySelectorAll('.font-serif-elegant').forEach(el => {
+            el.style.fontFamily = fontStack;
+          });
+
+          // Update font size proportionally
+          const baseSize = config.font_size || defaultConfig.font_size;
+          document.getElementById('hero-title').style.fontSize = `${baseSize * 3.5}px`;
+          document.getElementById('hero-message').style.fontSize = `${baseSize * 1.25}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+            },
+            {
+              get: () => config.light_text_color || defaultConfig.light_text_color,
+              set: (value) => { config.light_text_color = value; window.elementSdk.setConfig({ light_text_color: value }); }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['church_name', config.church_name || defaultConfig.church_name],
+          ['welcome_title', config.welcome_title || defaultConfig.welcome_title],
+          ['welcome_message', config.welcome_message || defaultConfig.welcome_message],
+          ['service_time_sunday', config.service_time_sunday || defaultConfig.service_time_sunday],
+          ['service_time_wednesday', config.service_time_wednesday || defaultConfig.service_time_wednesday],
+          ['address', config.address || defaultConfig.address],
+          ['phone', config.phone || defaultConfig.phone],
+          ['pastor_name', config.pastor_name || defaultConfig.pastor_name]
+        ])
+      });
+    }
+
+    // Language toggle
+    const langToggle = document.getElementById('lang-toggle');
+    const langToggleMobile = document.getElementById('lang-toggle-mobile');
+    
+    langToggle.addEventListener('click', () => {
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      translatePage(newLang);
+    });
+
+    langToggleMobile.addEventListener('click', () => {
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      translatePage(newLang);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Trigger animations on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+      animatedElements.forEach((el, index) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+        }, index * 100);
+      });
+    });
+
+    // WhatsApp floating button
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const whatsappMenu = document.getElementById('whatsapp-menu');
+    
+    whatsappBtn.addEventListener('click', () => {
+      whatsappMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const whatsappFloat = document.getElementById('whatsapp-float');
+      if (!whatsappFloat.contains(e.target)) {
+        whatsappMenu.classList.add('hidden');
+      }
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1754c9a15a1b0d',t:'MTc2OTAwMzk1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
